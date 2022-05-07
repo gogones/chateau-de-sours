@@ -1,0 +1,22 @@
+.overviewSection {
+    position: relative;
+}
+
+.overviewIntroduction {
+    position: relative;
+    background-color: grey;
+    height: 100vh;
+    z-index: 2;
+}
+
+.overviewGallery {
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.overviewGallery img {
+    display: block;
+    width: 100%;
+}

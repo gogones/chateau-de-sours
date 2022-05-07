@@ -1,0 +1,14 @@
+.gap-xs { gap: var(--space-xs, .5rem); }
+.gap-sm { gap: var(--space-sm, 1rem); }
+.gap-md { gap: var(--space-md, 2rem); }
+.gap-lg { gap: var(--space-lg, 4rem); }
+.gap-xl { gap: var(--space-xl, 6rem); }
+
+
+@media(min-width:600px) {
+    .desktop-gap-xs { gap: var(--space-xs, .5rem); }
+    .desktop-gap-sm { gap: var(--space-sm, 1rem); }
+    .desktop-gap-md { gap: var(--space-md, 2rem); }
+    .desktop-gap-lg { gap: var(--space-lg, 4rem); }
+    .desktop-gap-xl { gap: var(--space-xl, 6rem); }
+}

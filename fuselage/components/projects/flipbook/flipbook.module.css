@@ -1,0 +1,13 @@
+.flipbook {
+    z-index: 1;
+    width: 100%;
+}
+.flipbookSlides {
+    position: relative;
+}
+.flipbookSlide {
+    width: 100%;
+}
+.flipbookSlide img {
+    width: 100%;
+}

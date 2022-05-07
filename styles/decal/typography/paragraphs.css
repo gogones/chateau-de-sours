@@ -1,0 +1,7 @@
+/* 
+    --default-line-height
+*/
+
+p { line-height: var(--default-line-height, 1.2); }
+
+p:not(:last-child) { margin-bottom: calc(var(--default-line-height, 1.2) * 0.5rem); }

@@ -1,0 +1,56 @@
+html {
+    background-color: var(--global-bg, white);
+    color: var(--default-text-color, rgb(40, 40, 40));
+}
+
+body {
+    font-family: var(--default-font-family, sans-serif);
+}
+
+
+/* tablet size adjuster */
+@media(min-width:600px) {
+    :root {
+        --default-font-size: 1rem;
+    }
+}
+
+/* medium screen size adjuster */
+@media(min-width:1200px) {
+    :root {
+        --default-font-size: 1rem;
+    }
+}
+
+/* big screen size adjuster */
+@media(min-width:1600px) {
+    :root {
+        --default-font-size: 1rem;
+    }
+}
+
+/* huge screen size adjuster */
+@media(min-width:2200px) {
+    :root {
+        --default-font-size: 1.25rem;
+    }
+}
+
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 { 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+a {color: currentColor;}
+
+.inline { display: inline-block; }
+
+.overscroll {
+    overscroll-behavior: contain;
+}

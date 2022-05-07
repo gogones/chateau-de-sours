@@ -1,0 +1,26 @@
+.poster {
+    background-color: tomato;
+    position: relative;
+    overflow: hidden;
+    height: 100vh; width: 100%;
+}
+
+.posterForeground {
+    color: white;
+    padding: 2rem;
+    position: absolute;
+    width: 100%; height: 100%;
+    z-index: 2;
+}
+.posterWidget {
+    width: 10rem; height: 10rem;
+    background-color: plum;
+    /* position: absolute; */
+}
+
+.posterBackground {
+    background-color: grey;
+    position: absolute;
+    width: 100%; height: 100%;
+    z-index: 1;
+}

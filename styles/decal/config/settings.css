@@ -1,0 +1,106 @@
+:root {
+
+    /* colour */
+
+    --primary: #62C331;
+    --secondary: #3AA849;
+    --accent: #808080;
+    --mint: #C8FFC0;
+
+    --bg-global: rgb(255, 255, 255);
+
+    --default-text-color: black;
+    --default-heading-color: black;
+
+    --wash: #F6F7F7;
+    --light: #e4e7e7;
+    --medium: #868686;
+    --dark: #000000;
+
+    --error: rgb(255, 68, 0);
+    --success: #62C331;
+    --warning: rgb(255, 166, 0);
+
+
+    /* spacing */
+
+    --container-max-width: 100rem;
+    --container-adjacent-spacing-factor: 0.5;
+
+    --unit-xs: 1rem;
+    --unit-sm: 1.75rem;
+    --unit-md: 4rem;
+    --unit-lg: 6rem;
+    --unit-xl: 8rem;
+
+
+    /* type */
+
+    --default-font-family: 'GraphikRegular', Helvetica Neue, sans-serif;
+    --default-font-size: 1rem;
+    --default-line-height: 1.4;
+
+    --default-heading-line-height: 1.2;
+    --default-heading-weight: 500;
+
+    --default-sans-weight-100: 'GraphikThin', Helvetica Neue, sans-serif; /* thin */
+    --default-sans-weight-200: 'GraphikExtralight', Helvetica Neue, sans-serif; /* extra-light */
+    --default-sans-weight-300: 'GraphikLight', Helvetica Neue, sans-serif; /* light */
+    --default-sans-weight-400: 'GraphikRegular', Helvetica Neue, sans-serif; /* regular */
+    --default-sans-weight-500: 'GraphikMedium', Helvetica Neue, sans-serif; /* medium */
+    --default-sans-weight-600: 'GraphikSemibold', Helvetica Neue, sans-serif; /* semi-bold */
+    --default-sans-weight-700: 'GraphikBold', Helvetica Neue, sans-serif; /* bold */
+    --default-sans-weight-800: 'GraphikBlack', Helvetica Neue, sans-serif; /* extra-bold */
+    --default-sans-weight-900: 'GraphikSuper', Helvetica Neue, sans-serif; /* black */
+
+
+     /* header */
+
+    --header-bg: rgba(255, 255, 255, 1);
+    --nav-overlay-bg: rgb(25, 26, 27);
+
+    --header-height-desktop: 5rem;
+    --header-height-mobile: 5rem;
+
+    --nav-toggle-color: white;
+    --nav-toggle-color-active: white;
+    --nav-toggle-size: 48px;
+    --nav-toggle-radius: 10rem;
+    --nav-toggle-background: var(--primary);
+    --nav-toggle-border: none;
+
+    --menuLinkUnderline: 2px;
+    
+
+
+    /* global UI styling */
+
+    --default-radius: 0.5rem;
+    --default-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    --default-shadow-size: 20px;
+    --default-shadow-opacity: 0.2;
+
+    --gap-divider-color: currentColor;
+
+
+
+    /* forms */
+
+    --standard-border-color: transparent;
+    --standard-field-radius: .45rem;
+    --standard-field-bg: #3C3C3B;
+
+
+
+    /* components */
+
+    --modal-speed: 350ms;
+
+    --button-tx: white;
+    --button-bg: var(--primary);
+    --button-bg-hover: var(--secondary);
+    --button-radius: 20rem;
+
+}
+
+

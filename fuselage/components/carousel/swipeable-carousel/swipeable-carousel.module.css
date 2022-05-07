@@ -1,0 +1,49 @@
+.swipeableRoot {
+  position: relative;
+  height: 30rem;
+}
+
+.slideContainer {
+  overflow: hidden;
+}
+
+.slideImg {
+  aspect-ratio: 4/3;
+  width: inherit;
+  height: 30rem;
+  object-fit: contain
+}
+
+.buttonNavOverlay {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: .5rem;
+  padding: .5rem;
+  border: none;
+  background-color: rgba(4, 4, 4, 0.42);
+  color: #fff;
+}
+
+.buttonNavOverlay:disabled {
+  background-color: rgba(4, 4, 4, 0.42);
+  color: rgba(255, 255, 255, 0.36);
+}
+
+.buttonNavOverlay.left {
+  left: 0;
+}
+
+.buttonNavOverlay.right {
+  right: 0;
+}
+
+@media (min-width: 390px) and (max-width: 991px) {
+  .swipeableRoot {
+    height: auto;
+  }
+
+  .slideImg {
+    height: auto;
+  }
+}

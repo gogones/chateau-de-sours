@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero {
+    background-color: #956285;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+}
+
+.heroForeground {
+    background-color: rgba(0,0,0,0.0);
+    color: white;
+    padding: calc(var(--unit-md, 2rem)) calc(var(--unit-sm, 2rem));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.heroWidget {
+    width: 6rem;
+    height: 6rem;
+}
+
+.heroBackground {
+    background-color: grey;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.heroBackground img {
+    display: block;
+    object-fit: cover;
+    width: 100%; height: 100%;
+}
+
+@media (min-width: 600px) {
+    .heroForeground { padding: calc(var(--unit-sm)); }
+}
+@media (min-width: 900px) {
+    .heroForeground { padding: calc(var(--unit-md)); }
+    .heroWidget {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+@media (min-width: 1200px) {
+    .heroForeground { padding: calc(var(--unit-lg)); }
+}
+@media (min-width: 1800px) {
+    .heroForeground { padding: calc(var(--unit-xl)); }
+}
+@media (min-width: 2200px) {
+    .heroForeground { padding: var(--unit-xl) calc(var(--unit-xl) * 2); }
+}
+
+
+
+.overviewSection {
+    position: relative;
+    overflow: hidden;
+}
+
+.overviewIntroduction {
+    background-color: white;
+}
+
+.overviewText {
+    background-color: white;
+}
+
+
+.dummy {
+    width: 100%; height: 100vh;
+}
+.dummyHalf {
+    width: 100%; height: 50vh;
+}
+
+.dummy169 {
+    aspect-ratio: 16 / 9;
+}
+
+
+
+
+.stickyVideoContainer {
+    width: 100%;
+    position: relative;
+}
+
+.stickyVideo {
+    width: 100%;
+}
+
+.video {
+    width: 100vh;
+}
+
+
+
+
+.phoneGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+.phoneGrid div {
+    display: block;
+    width: 100%;
+    aspect-ratio: 432/914;
+    background-color: cadetblue;
+    overflow: hidden;
+}
+
+.phoneGrid div:nth-child(1) {
+    grid-area: 1/1 / 2/2;
+}
+.phoneGrid div:nth-child(2) {
+    grid-area: 1/2 / 2/3;
+}
+.phoneGrid div:nth-child(3) {
+    grid-area: 2/1 / 3/2;
+}
+
+.phoneGridVideo {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.floatingPhoneText > div {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: var(--space-lg)
+}
+
+@media (min-width: 590px) {
+    .floatingPhoneText > div {
+        height: 100vh;
+    }
+}
+
+
+
+.stickyGalleryContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+.stickyGallery {
+    position: sticky;
+    top: 80px;
+}
+
+.stickyGalleryImages {
+    aspect-ratio: 4 / 3;
+    height: auto;
+}
+
+.stickyGalleryImages img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 50%; transform: translateY(-50%);
+}
+
+.stickyGalleryContent {
+    margin: 30vh 0;
+}
+.stickyGalleryContent > div {
+    padding: var(--space-md);
+}
+
+.stickyGallery {
+    grid-row: 1;
+}
+
+#cardSwiperSection {
+    /*width: 100%;*/
+}
+
+.cardSwiperImg {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    object-fit: contain;
+}
+
+.swipeableLeftParagraph {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.swipeableContainer {
+    height: 100vh;
+}
+
+@media (min-width: 810px) {
+    .stickyGalleryContainer {
+        grid-template-columns: 1fr 2fr;
+    }
+    .stickyGalleryContent  {
+        margin: 50vh 0;
+    }
+    .stickyGallery {
+        position: relative;
+        grid-row: auto;
+        top: auto;
+    }
+    .stickyGalleryImages {
+        aspect-ratio: auto;
+        position: sticky;
+        height: 100vh;
+        top: 0;
+    }
+}
+
+@media(max-width:599px) {
+    .mobileRemovePaddingBottom {
+        padding-bottom: 0;
+    }
+}
+
+@media (min-width: 390px) and (max-width: 599px) {
+    .swipeableLeftParagraph {
+        height: auto;
+    }
+
+    .paddingLeft {
+        padding-left: var(--space-md);
+    }
+}

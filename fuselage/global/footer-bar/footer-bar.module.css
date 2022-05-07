@@ -1,0 +1,38 @@
+.footerBar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #333132;
+    color: white;
+}
+
+.footerBarContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.footerBarMission {
+    line-height: 1.2;
+}
+
+.footerBarLinks {
+    color: #9C9C9B;
+
+}
+.footerBarLinks a {
+    text-decoration: none;
+    transition: all 250ms ease-in-out;
+}
+.footerBarLinks a:hover {
+    color: white;
+}
+
+@media(min-width:600px) {
+    .footerBarContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+

@@ -9,7 +9,7 @@ const HistoryVideo = () => {
     );
 
     return (
-        <section className={currentBreakpoint <= 600 ? '' : 'block'}>
+        <section className={currentBreakpoint <= 600 ? '' : 'block'} style={{paddingTop: 0}}>
             <video
                 playsInline={true}
                 autoPlay={true}

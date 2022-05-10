@@ -14,7 +14,6 @@ import OurValue from "../fuselage/components/our-value/our-value";
 import Challenge from "../fuselage/components/challenge/challenge";
 import Solution from "../fuselage/components/solution/solution";
 import SolutionVideo from "../fuselage/components/solution-video/solution-video";
-import NewVision from "../fuselage/components/new-vision/new-vision";
 import FloatingPhones from "../fuselage/components/floating-phones/floating-phones";
 import GridVideo from "../fuselage/components/grid-video/grid-video";
 import DraggableSlideshow from "../fuselage/components/draggable-slideshow/draggable-slideshow";
@@ -70,8 +69,6 @@ export default function Home() {
 				<Solution />
 
 				<SolutionVideo />
-
-				<NewVision />
 
 				<FloatingPhones />
 

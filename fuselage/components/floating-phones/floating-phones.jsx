@@ -24,6 +24,7 @@ const FloatingPhones = () => {
             yPercent: 20
         })
     }, []);
+
     return (
         <section className="floatingPhones | block bg-default minvh-100">
             <div className="container columns-2 gap-md">
@@ -39,7 +40,7 @@ const FloatingPhones = () => {
                             muted={true}
                             style={{ width: `100%`}}
                         >
-                            <source src="/assets/projects/chateau-de-sours/2_homepage_mobile.mp4" type="video/mp4" />
+                            <source src="/assets/projects/chateau-de-sours/2_homepage_mobile-19apr-r2_1.mp4" type="video/mp4" />
                         </video>
                     </div>
                     <div className='floatingPhone2'>
@@ -53,7 +54,7 @@ const FloatingPhones = () => {
                             muted={true}
                             style={{ width: `100%`}}
                         >
-                            <source src="/assets/projects/chateau-de-sours/3_our_value_mobile.mp4" type="video/mp4" />
+                            <source src="/assets/projects/chateau-de-sours/3_our_value_mobile-19apr-r2.mp4" type="video/mp4" />
                         </video>
                     </div>
                     <div className='floatingPhone3'>
@@ -67,7 +68,7 @@ const FloatingPhones = () => {
                             muted={true}
                             style={{ width: `100%`}}
                         >
-                            <source src="/assets/projects/chateau-de-sours/4_philosophy_mobile.mp4" type="video/mp4" />
+                            <source src="/assets/projects/chateau-de-sours/4_philosophy_mobile-19apr-r2_1.mp4" type="video/mp4" />
                         </video>
                     </div>
 

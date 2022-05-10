@@ -11,7 +11,7 @@ const SwipeableCarousel = ({images, withoutArrow}) => {
     const handleChangeIndex = index => setIndex(index);
 
     return (
-        <div className={`${CSS.swipeableRoot} minvh-30 maxw-100pc`}>
+        <div className={`${CSS.swipeableRoot} maxw-100pc`}>
             <AutoPlaySwipeableViews index={index} onChangeIndex={handleChangeIndex} slideClassName={CSS.slideContainer}>
                 {images.map((image, index) => (
                     <img key={image} src={image} alt={`image-${index}`} className={CSS.slideImg} />

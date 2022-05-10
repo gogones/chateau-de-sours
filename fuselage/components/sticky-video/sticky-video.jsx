@@ -11,7 +11,6 @@ const StickyVideo = () => {
                     scrub: 1,
                     start: 'top-=73 middle',
                     pin: true,
-                    markers: true,
                     toggleActions: 'restart none reverse none',
                     onLeave: () => videoRef.current.play()
                 },

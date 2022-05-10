@@ -188,16 +188,16 @@
     grid-row: 1;
 }
 
-#cardSwiperSection {
-    /*width: 100%;*/
+.cardSwiperImgContainer {
+    margin-top: 9rem;
 }
 
 .cardSwiperImg {
     position: sticky;
     top: 0;
-    height: 100vh;
     width: 100%;
     object-fit: contain;
+    margin-bottom: 2rem;
 }
 
 .swipeableLeftParagraph {
@@ -208,6 +208,12 @@
 
 .swipeableContainer {
     height: 100vh;
+}
+
+@media (min-width: 900px) {
+    .cardSwiperImg {
+        top: var(--header-height-desktop, 5rem);
+    }
 }
 
 @media (min-width: 810px) {

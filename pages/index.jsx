@@ -12,7 +12,6 @@ import StickyVideo from "../fuselage/components/sticky-video/sticky-video";
 import OverviewText from "../fuselage/components/overview-text/overview-text";
 import OurValue from "../fuselage/components/our-value/our-value";
 import Challenge from "../fuselage/components/challenge/challenge";
-import CardSwiper from "../fuselage/components/card-swiper/card-swiper";
 import Solution from "../fuselage/components/solution/solution";
 import SolutionVideo from "../fuselage/components/solution-video/solution-video";
 import NewVision from "../fuselage/components/new-vision/new-vision";
@@ -67,8 +66,6 @@ export default function Home() {
 				<OurValue />
 
 				<Challenge />
-
-				<CardSwiper />
 
 				<Solution />
 

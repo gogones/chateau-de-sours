@@ -11,21 +11,27 @@ const StickyVideo = () => {
                     scrub: 1,
                     start: 'top-=73 middle',
                     pin: true,
+                    markers: true,
+                    toggleActions: 'restart none reverse none',
+                    onLeave: () => videoRef.current.play()
                 },
-                padding: '4rem'
+                padding: '4rem',
             })
         }
     }, []);
 
+    const videoRef = React.useRef();
+
     return (
         <section className={`${CSS.stickyVideoContainer} -a-stickyVideoContainer`}>
             <video
+                ref={videoRef}
                 className={`${CSS.stickyVideo} -a-stickyVideo`}
                 playsInline={true}
-                autoPlay={true}
                 loop={true}
                 preload="auto"
                 muted={true}
+                poster="/assets/projects/chateau-de-sours/5_homepage_desktop.jpg"
             >
                 <source src="/assets/projects/chateau-de-sours/5_homepage_desktop.mp4" type="video/mp4" />
             </video>

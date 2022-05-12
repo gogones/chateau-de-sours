@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { gsap } from "gsap/dist/gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
@@ -19,8 +19,17 @@ import GridVideo from "../fuselage/components/grid-video/grid-video";
 import DraggableSlideshow from "../fuselage/components/draggable-slideshow/draggable-slideshow";
 import HistoryVideo from "../fuselage/components/history-video/history-video";
 import TwoColumns from "../fuselage/components/two-columns/two-columns";
+import useBreakpoints from "@thebiltheory/usebreakpoints";
+import {breakpoints} from "../fuselage/utils/breakpoints";
+import HeroMobile from "../fuselage/components/hero/hero-mobile";
 
 export default function Home() {
+	const [value, currentBreakpoint] = useBreakpoints(
+		Object.keys(breakpoints),
+		Object.values(breakpoints)
+	);
+
+	const [isMobile, setIsMobile] = useState();
 	const [ cursorActive, setCursorActive ] = useState(false)
 	const [ cursorPressed, setCursorPressed ] = useState(false)
 
@@ -41,6 +50,14 @@ export default function Home() {
 
 	}, [])
 
+	React.useEffect(() => {
+		if (value && currentBreakpoint <= breakpoints.sm) {
+			setIsMobile(true)
+		} else if (value && currentBreakpoint > breakpoints.sm) {
+			setIsMobile(false)
+		}
+	},[currentBreakpoint, value])
+
 	return (
 		<>
 			<Head>
@@ -54,7 +71,8 @@ export default function Home() {
 			<Header/>
 
 			<main>
-				<Hero />
+				{value && currentBreakpoint <= breakpoints.sm && <HeroMobile />}
+				{value && currentBreakpoint > breakpoints.sm && <Hero />}
 
 				<OverviewIntro />
 

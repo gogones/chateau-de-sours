@@ -1,24 +1,40 @@
 import React from 'react';
 import CSS from "../../../pages/index.module.css";
 import {gsap} from "gsap/dist/gsap";
+import useBreakpoints from "@thebiltheory/usebreakpoints";
+import {breakpoints} from "../../utils/breakpoints";
 
 const Challenge = () => {
+    const [value, currentBreakpoint] = useBreakpoints(
+        Object.keys(breakpoints),
+        Object.values(breakpoints)
+    );
+
     React.useEffect(() => {
-        if(document.querySelector("body").clientWidth > '900'){
+        const scrollTrigger = {
+            trigger: `.${CSS.cardSwiperImgContainer}`,
+            scrub: 1,
+        };
+
+        const vars = {
+            opacity: 0.2,
+            stagger: 1,
+            paddingTop: '4rem',
+            paddingLeft: '4rem',
+            paddingRight: '4rem',
+        }
+        if(value && currentBreakpoint > breakpoints.sm) {
+            gsap.to(`.${CSS.cardSwiperImg}`, {...vars, scrollTrigger: {...scrollTrigger, start: 'top-=10% middle',}})
+        } else if(value && currentBreakpoint <= breakpoints.sm) {
             gsap.to(`.${CSS.cardSwiperImg}`, {
-                scrollTrigger: {
-                    trigger: `.${CSS.cardSwiperImgContainer}`,
-                    scrub: 1,
-                    start: 'top-=10% middle',
-                },
-                opacity: 0.2,
-                stagger: 1,
-                paddingTop: '4rem',
-                paddingLeft: '4rem',
-                paddingRight: '4rem',
+                ...vars,
+                paddingTop: '2rem',
+                paddingLeft: '2rem',
+                paddingRight: '2rem',
+                scrollTrigger: {...scrollTrigger, start: 'top-=150rem middle'},
             })
         }
-    }, []);
+    }, [currentBreakpoint, value]);
 
     return (
         <section className='block'>

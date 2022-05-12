@@ -255,7 +255,11 @@
     }
 }
 
-@media(max-width:599px) {
+@media (max-width: 768px) {
+    .cardSwiperImgContainer {
+        margin-top: 3rem;
+    }
+
     .mobileRemovePaddingBottom {
         padding-bottom: 0;
     }

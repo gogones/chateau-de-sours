@@ -1,23 +1,37 @@
 import React from 'react';
 import CSS from "../../../pages/index.module.css";
 import {gsap} from "gsap/dist/gsap";
+import useBreakpoints from "@thebiltheory/usebreakpoints";
+import {breakpoints} from "../../utils/breakpoints";
 
 const StickyVideo = () => {
+    const [value, currentBreakpoint] = useBreakpoints(
+        Object.keys(breakpoints),
+        Object.values(breakpoints)
+    );
+
     React.useEffect(() => {
-        if(document.querySelector("body").clientWidth > '900'){
+        const scrollTrigger = {
+            trigger: '.-a-stickyVideoContainer',
+            scrub: 1,
+            start: 'top-=73 middle',
+            pin: true,
+            toggleActions: 'restart none reverse none',
+            onLeave: () => videoRef.current.play()
+        };
+
+        if(value && currentBreakpoint > breakpoints.sm) {
             gsap.to('.-a-stickyVideo', {
-                scrollTrigger: {
-                    trigger: '.-a-stickyVideoContainer',
-                    scrub: 1,
-                    start: 'top-=73 middle',
-                    pin: true,
-                    toggleActions: 'restart none reverse none',
-                    onLeave: () => videoRef.current.play()
-                },
+                scrollTrigger,
                 padding: '4rem',
             })
+        } else if(value && currentBreakpoint <= breakpoints.sm) {
+            gsap.to('.-a-stickyVideo', {
+                scrollTrigger,
+                padding: '2rem',
+            })
         }
-    }, []);
+    }, [currentBreakpoint, value]);
 
     const videoRef = React.useRef();
 

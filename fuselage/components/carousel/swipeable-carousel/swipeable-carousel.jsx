@@ -6,12 +6,12 @@ import LeftArrow from "../../icons/left-arrow/left-arrow";
 import RightArrow from "../../icons/right-arrow/right-arrow";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-const SwipeableCarousel = ({images, withoutArrow}) => {
+const SwipeableCarousel = ({images, withoutArrow, className, ...rest}) => {
     const [index, setIndex] = React.useState(0);
     const handleChangeIndex = index => setIndex(index);
 
     return (
-        <div className={`${CSS.swipeableRoot} maxw-100pc`}>
+        <div className={`${CSS.swipeableRoot} maxw-100pc ${className}`} {...rest}>
             <AutoPlaySwipeableViews index={index} onChangeIndex={handleChangeIndex} slideClassName={CSS.slideContainer}>
                 {images.map((image, index) => (
                     <img key={image} src={image} alt={`image-${index}`} className={CSS.slideImg} />

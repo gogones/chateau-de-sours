@@ -15,7 +15,6 @@ const Solution = () => {
         if(currentBreakpoint > 600 && document.querySelector("body").clientWidth > '900'){
             const scrollTrigger = {
                 scrub: 1,
-                pin: true,
             };
 
             gsap.to(`.${CSS.swipeableLeftParagraph}`, {
@@ -26,21 +25,32 @@ const Solution = () => {
                 },
             })
 
-            gsap.to(`#container-1`, {
+            gsap
+                .fromTo(`#carousel-1`, {
+                    opacity: 1,
+                },{
                 scrollTrigger: {
                     ...scrollTrigger,
-                    trigger: `#container-1`,
                     start: 'top-=10% middle',
+                    trigger: `#carousel-1`,
                 },
                 opacity: 0,
+                paddingTop: '4rem',
+                paddingLeft: '4rem',
+                paddingRight: '4rem',
             })
 
-            gsap.to(`#container-2`, {
+            gsap
+                .fromTo(`#carousel-2`,{
+                   opacity: 0,
+                },{
                 scrollTrigger: {
                     ...scrollTrigger,
-                    trigger: `#container-2`,
-                    pin: false,
+                    trigger: `#carousel-2`,
+                    start: 'top center',
+                    end: 'center+=50% center',
                 },
+                opacity: 1,
             })
 
         }
@@ -120,9 +130,9 @@ const Solution = () => {
 
     return (
         <section className={`block bg-default minvh-100 ${CSS.solutionContainer}`}>
-            <div className='container columns-2 gap-md' style={{position: 'sticky'}}>
-                <div className={`${CSS.swipeableLeftParagraph} maxw-30`}>
-                    <div>
+            <div className='container columns-2 gap-md' style={{height: '100vh'}}>
+                <div className={`maxw-30`}>
+                    <div className={`${CSS.swipeableLeftParagraph}`}>
                         {/* New Paragraph */}
                         <p className='fw-500'>
                             Solution
@@ -164,21 +174,22 @@ const Solution = () => {
                 </div>
 
                 {/* Slideshow container */}
-                <div id='trigger-123'>
+                {/*<div id='trigger-123'>*/}
                     {/* First slideshow */}
-                    <div id={`container-1`} className={`${CSS.swipeableContainer} container-123`}>
+                    <div id={`container-1`} className={`${CSS.swipeableContainer}`}>
                         <SwipeableCarousel
+                            id={`carousel-1`}
+                            className={`${CSS.carousel} ${CSS.firstChild}`}
                             withoutArrow
                             images={[
                                 '/assets/projects/chateau-de-sours/chateau-experience-strategy-01.jpg',
                                 '/assets/projects/chateau-de-sours/chateau-experience-strategy-02.jpg',
                                 '/assets/projects/chateau-de-sours/chateau-experience-strategy-03.jpg',
                             ]} />
-                    </div>
 
-                    {/* Second Slideshow */}
-                    <div id={`container-2`} className={`${CSS.swipeableContainer} container-123`}>
                         <SwipeableCarousel
+                            id={`carousel-2`}
+                            className={`${CSS.carousel}`}
                             withoutArrow
                             images={[
                                 '/assets/projects/chateau-de-sours/chateau-experience-strategy-04.jpg',
@@ -188,7 +199,7 @@ const Solution = () => {
                                 '/assets/projects/chateau-de-sours/chateau-experience-strategy-08.jpg',
                             ]} />
                     </div>
-                </div>
+                {/*</div>*/}
             </div>
         </section>
     );

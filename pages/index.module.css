@@ -213,10 +213,23 @@
 
 .solutionContainer {
     padding-top: 0;
-    padding-bottom: 0;
 }
 
 @media (min-width: 900px) {
+    .carousel {
+    }
+
+    .carousel.firstChild {
+        top: var(--header-height-desktop, 5rem);
+        position: sticky !important;
+    }
+
+    .swipeableLeftParagraph {
+        top: var(--header-height-desktop, 5rem);
+        position: sticky !important;
+        /*height: 100vh;*/
+    }
+
     .cardSwiperImg {
         top: var(--header-height-desktop, 5rem);
     }

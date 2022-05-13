@@ -9,7 +9,7 @@ const SolutionVideo = () => {
     );
 
     return (
-        <section className={currentBreakpoint <= 600 ? '' : `block`} style={{paddingTop: 0, paddingBottom: 0}}>
+        <section className={currentBreakpoint <= 600 ? '' : `block`} style={{paddingBottom: 0}}>
             <video
                 playsInline={true}
                 autoPlay={true}

@@ -1,6 +1,6 @@
 .swipeableRoot {
   position: relative;
-  height: 30rem;
+  height: 19rem;
 }
 
 .slideContainer {
@@ -10,7 +10,7 @@
 .slideImg {
   aspect-ratio: 4/3;
   width: inherit;
-  height: 30rem;
+  height: 19rem;
   object-fit: contain
 }
 

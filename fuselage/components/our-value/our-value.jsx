@@ -3,7 +3,7 @@ import CSS from "../../../pages/index.module.css";
 
 const OurValue = () => {
     return (
-        <section id='videoContainer1' className="block bg-wash">
+        <section id='videoContainer1' className="block bg-wash" style={{paddingBottom: '4rem'}}>
             <div className="container">
                 <video
                     id='video1'

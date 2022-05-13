@@ -5,11 +5,11 @@ const TwoColumns = () => {
         <section className="block bg-default">
             <div className="container columns-2 gap-md">
                 <div>
-                    <img className='w-100pc' src="/assets/projects/chateau-de-sours/cds-webpage-1.jpg" alt="" />
+                    <img className='w-100pc' src="/assets/projects/chateau-de-sours/7_philosophy.jpg" alt="" />
                 </div>
 
                 <div>
-                    <img className='w-100pc' src="/assets/projects/chateau-de-sours/cds-webpage-2.jpg" alt="" />
+                    <img className='w-100pc' src="/assets/projects/chateau-de-sours/8_red.jpg" alt="" />
                 </div>
             </div>
         </section>

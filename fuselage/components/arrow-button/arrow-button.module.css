@@ -42,3 +42,13 @@
         width: 100%;
     }
 }
+
+@media(max-width: 768px) {
+    .arrowButton {
+        background-position: 1.4rem center;
+    }
+
+    .arrowButton::before {
+        width: 100%;
+    }
+}

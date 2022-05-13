@@ -61,7 +61,7 @@ const Solution = () => {
             <section className='bg-default minvh-100'>
                 <div className='container'>
                     <div className={`${CSS.swipeableLeftParagraph} maxw-30`}>
-                        <div className={CSS.paddingLeft}>
+                        <div className={`${CSS.paddingLeft} ${CSS.paddingRight}`}>
                             <p className='fw-500'>
                                 Solution
                             </p>
@@ -86,7 +86,7 @@ const Solution = () => {
                                 ]} />
                         </div>
 
-                        <div className={CSS.paddingLeft}>
+                        <div className={`${CSS.paddingLeft} ${CSS.paddingRight}`}>
                             <p className='fs-3 fw-500'>
                                 Informative
                             </p>

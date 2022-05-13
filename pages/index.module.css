@@ -263,6 +263,10 @@
     .mobileRemovePaddingBottom {
         padding-bottom: 0;
     }
+
+    .phoneGrid {
+        order: 2;
+    }
 }
 
 @media (min-width: 390px) and (max-width: 599px) {
@@ -272,5 +276,8 @@
 
     .paddingLeft {
         padding-left: var(--space-md);
+    }
+    .paddingRight {
+        padding-right: var(--space-md);
     }
 }

@@ -5,11 +5,6 @@ import useBreakpoints from "@thebiltheory/usebreakpoints";
 import {breakpoints} from "../../utils/breakpoints";
 
 const Hero = () => {
-    const [value, currentBreakpoint] = useBreakpoints(
-        Object.keys(breakpoints),
-        Object.values(breakpoints)
-    );
-
     React.useEffect(() => {
             const hero = gsap.timeline({
                 scrollTrigger: {
@@ -24,7 +19,7 @@ const Hero = () => {
                 .from('.-a-heroWidget', {yPercent: 200, opacity: 0})
                 .to('.-a-heroForeground', {yPercent: -20, opacity: 0});
 
-    }, [currentBreakpoint, value]);
+    }, []);
 
     return (
         <section className={`${CSS.hero} -a-hero`}>

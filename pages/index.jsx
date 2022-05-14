@@ -21,6 +21,7 @@ import HistoryVideo from "../fuselage/components/history-video/history-video";
 import TwoColumns from "../fuselage/components/two-columns/two-columns";
 import useBreakpoints from "@thebiltheory/usebreakpoints";
 import {breakpoints} from "../fuselage/utils/breakpoints";
+import SolutionMobile from "../fuselage/components/solution/solution-mobile";
 
 export default function Home() {
 	const [value, currentBreakpoint] = useBreakpoints(
@@ -82,7 +83,7 @@ export default function Home() {
 
 				<Challenge />
 
-				<Solution />
+				{isMobile ? <SolutionMobile /> : <Solution />}
 
 				<SolutionVideo />
 

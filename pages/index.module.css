@@ -206,8 +206,14 @@
 }
 
 .swipeableContainer {
-    /*height: 50vh;*/
+    /*height: 100vh;*/
     /*position: sticky;*/
+}
+
+.swipeableContainer > * {
+    /*height: 70vh !important;*/
+    /*position: sticky;*/
+
 }
 
 .solutionContainer {
@@ -219,8 +225,15 @@
     }
 
     .carousel.firstChild {
-        top: var(--header-height-desktop, 5rem);
-        position: sticky !important;
+        height: 65vh !important;
+        /*top: var(--header-height-desktop, 5rem);*/
+        /*position: sticky !important;*/
+    }
+
+    .carousel.secondChild {
+        height: 100vh !important;
+        /*top: var(--header-height-desktop, 5rem);*/
+        /*position: sticky !important;*/
     }
 
     .swipeableLeftParagraph {

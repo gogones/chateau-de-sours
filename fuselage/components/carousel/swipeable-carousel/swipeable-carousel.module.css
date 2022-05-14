@@ -8,9 +8,7 @@
 }
 
 .slideImg {
-  aspect-ratio: 4/3;
   width: inherit;
-  height: 19rem;
   object-fit: contain
 }
 

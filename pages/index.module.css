@@ -210,10 +210,8 @@
     /*position: sticky;*/
 }
 
-.swipeableContainer > * {
-    /*height: 70vh !important;*/
-    /*position: sticky;*/
-
+.swipeableContainer > p {
+    visibility: hidden;
 }
 
 .solutionContainer {

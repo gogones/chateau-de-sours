@@ -70,6 +70,10 @@ const Solution = () => {
                 {/*<div id='trigger-123'>*/}
                     {/* First slideshow */}
                     <div id={`container-1`} className={`${CSS.swipeableContainer}`}>
+                        <p className='fw-500'>
+                            Solution
+                        </p>
+
                         <SwipeableCarousel
                             id={`carousel-1`}
                             className={`${CSS.carousel} ${CSS.firstChild}`}

@@ -1,6 +1,7 @@
 import React from 'react';
 import useBreakpoints from "@thebiltheory/usebreakpoints";
 import {breakpoints} from "../../utils/breakpoints";
+import CSS from "../../../pages/index.module.css";
 
 const SolutionVideo = () => {
     const [value, currentBreakpoint] = useBreakpoints(
@@ -9,7 +10,7 @@ const SolutionVideo = () => {
     );
 
     return (
-        <section className={currentBreakpoint <= 600 ? '' : `block`}>
+        <section className={currentBreakpoint <= 600 ? `block ${CSS.removePh}` : `block`}>
             <video
                 playsInline={true}
                 autoPlay={true}

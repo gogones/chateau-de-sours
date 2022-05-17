@@ -26,7 +26,7 @@ const FloatingPhones = () => {
     }, []);
 
     return (
-        <section className="floatingPhones | block bg-default minvh-100">
+        <section className={`floatingPhones | block bg-default minvh-100 ${CSS.removePt}`}>
             <div className="container columns-2 gap-md">
                 <div className={CSS.phoneGrid}>
                     <div className='floatingPhone1'>

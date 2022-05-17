@@ -10,25 +10,22 @@ const StickyVideo = () => {
         Object.values(breakpoints)
     );
 
+    const isMobile = currentBreakpoint <= breakpoints.sm
+
     React.useEffect(() => {
-        const scrollTrigger = {
-            trigger: '.-a-stickyVideoContainer',
-            scrub: 1,
-            start: 'top-=73 middle',
-            pin: true,
-            toggleActions: 'restart none reverse none',
-            onLeave: () => videoRef.current.play()
-        };
 
         if(value && currentBreakpoint > breakpoints.sm) {
+            const scrollTrigger = {
+                trigger: '.-a-stickyVideoContainer',
+                scrub: 1,
+                start: 'top-=73 middle',
+                pin: true,
+                toggleActions: 'restart none reverse none',
+                onLeave: () => videoRef.current.play()
+            };
             gsap.to('.-a-stickyVideo', {
                 scrollTrigger,
                 padding: '4rem',
-            })
-        } else if(value && currentBreakpoint <= breakpoints.sm) {
-            gsap.to('.-a-stickyVideo', {
-                scrollTrigger,
-                padding: '2rem',
             })
         }
     }, [currentBreakpoint, value]);

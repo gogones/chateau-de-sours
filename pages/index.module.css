@@ -10,6 +10,12 @@
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        height: 75vh;
+    }
+}
+
 .heroForeground {
     background-color: rgba(0,0,0,0.0);
     color: white;

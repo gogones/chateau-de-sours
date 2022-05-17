@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './two-columns.module.css';
 
 const TwoColumns = () => {
     return (
@@ -8,7 +9,7 @@ const TwoColumns = () => {
                     <img className='w-100pc' src="/assets/projects/chateau-de-sours/7_philosophy.jpg" alt="" />
                 </div>
 
-                <div>
+                <div id={style.red}>
                     <img className='w-100pc' src="/assets/projects/chateau-de-sours/8_red.jpg" alt="" />
                 </div>
             </div>

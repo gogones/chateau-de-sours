@@ -4,7 +4,7 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import CSS from './swipeable-carousel.module.css';
 import LeftArrow from "../../icons/left-arrow/left-arrow";
 import RightArrow from "../../icons/right-arrow/right-arrow";
-import {AdvancedImage, lazyload} from "@cloudinary/react";
+import {AdvancedImage} from "@cloudinary/react";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const SwipeableCarousel = ({images, withoutArrow, className, ...rest}) => {
@@ -15,7 +15,7 @@ const SwipeableCarousel = ({images, withoutArrow, className, ...rest}) => {
         <div className={`${CSS.swipeableRoot} maxw-100pc ${className}`} {...rest}>
             <AutoPlaySwipeableViews index={index} onChangeIndex={handleChangeIndex} slideClassName={CSS.slideContainer}>
                 {images.map((image, index) => (
-                    <AdvancedImage cldImg={image} plugins={[lazyload()]} key={`image-${index}`} alt={`image-${index}`} className={CSS.slideImg} />
+                    <AdvancedImage cldImg={image} key={`image-${index}`} alt={`image-${index}`} className={CSS.slideImg} />
                 ))}
             </AutoPlaySwipeableViews>
 

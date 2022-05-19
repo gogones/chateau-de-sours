@@ -1,6 +1,8 @@
 import React from 'react';
 import {CustomCursorArea} from "../custom-cursor/custom-cursor";
 import {HScroller} from "../h-scroller/h-scroller";
+import {AdvancedImage} from "@cloudinary/react";
+import {cdsSliderImg1, cdsSliderImg2, cdsSliderImg3, cdsSliderImg4} from "../../../src/cloudinary/images";
 
 const DraggableSlideshow = ({setCursorActive, setCursorPressed}) => {
     return (
@@ -13,10 +15,10 @@ const DraggableSlideshow = ({setCursorActive, setCursorPressed}) => {
             <CustomCursorArea >
 
                 <HScroller>
-                    <img className='image w-100pc' src="/assets/projects/chateau-de-sours/cds-slider-1.jpg" alt="" />
-                    <img className='image w-100pc' src="/assets/projects/chateau-de-sours/cds-slider-2.jpg" alt="" />
-                    <img className='image w-100pc' src="/assets/projects/chateau-de-sours/cds-slider-3.jpg" alt="" />
-                    <img className='image w-100pc' src="/assets/projects/chateau-de-sours/cds-slider-4.jpg" alt="" />
+                    <AdvancedImage cldImg={cdsSliderImg1} className='image w-100pc' alt="slider-image-1" />
+                    <AdvancedImage cldImg={cdsSliderImg2} className='image w-100pc' alt="slider-image-2" />
+                    <AdvancedImage cldImg={cdsSliderImg3} className='image w-100pc' alt="slider-image-3" />
+                    <AdvancedImage cldImg={cdsSliderImg4} className='image w-100pc' alt="slider-image-4" />
                 </HScroller>
 
             </CustomCursorArea>

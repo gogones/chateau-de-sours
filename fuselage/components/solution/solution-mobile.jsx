@@ -1,9 +1,13 @@
 import React from 'react';
 import CSS from "../../../pages/index.module.css";
 import SwipeableCarousel from "../carousel/swipeable-carousel/swipeable-carousel";
-import useBreakpoints from "@thebiltheory/usebreakpoints";
-import {breakpoints} from "../../utils/breakpoints";
-import {gsap} from "gsap/dist/gsap";
+import {
+    expStrategyImg1,
+    expStrategyImg2,
+    expStrategyImg3,
+    expStrategyImg4,
+    expStrategyImg5, expStrategyImg6, expStrategyImg7, expStrategyImg8
+} from "../../../src/cloudinary/images";
 
 const Solution = () => {
 
@@ -30,9 +34,9 @@ const Solution = () => {
                             <SwipeableCarousel
                                 withoutArrow
                                 images={[
-                                    '/assets/projects/chateau-de-sours/chateau-experience-strategy-01.jpg',
-                                    '/assets/projects/chateau-de-sours/chateau-experience-strategy-02.jpg',
-                                    '/assets/projects/chateau-de-sours/chateau-experience-strategy-03.jpg',
+                                    expStrategyImg1,
+                                    expStrategyImg2,
+                                    expStrategyImg3,
                                 ]} />
                         </div>
 
@@ -65,11 +69,11 @@ const Solution = () => {
                             <SwipeableCarousel
                                 withoutArrow
                                 images={[
-                                    '/assets/projects/chateau-de-sours/chateau-experience-strategy-04.jpg',
-                                    '/assets/projects/chateau-de-sours/chateau-experience-strategy-05.jpg',
-                                    '/assets/projects/chateau-de-sours/chateau-experience-strategy-06.jpg',
-                                    '/assets/projects/chateau-de-sours/chateau-experience-strategy-07.jpg',
-                                    '/assets/projects/chateau-de-sours/chateau-experience-strategy-08.jpg',
+                                    expStrategyImg4,
+                                    expStrategyImg5,
+                                    expStrategyImg6,
+                                    expStrategyImg7,
+                                    expStrategyImg8,
                                 ]} />
                         </div>
                     </div>

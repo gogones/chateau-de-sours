@@ -3,6 +3,8 @@ import CSS from "../../../pages/index.module.css";
 import {gsap} from "gsap/dist/gsap";
 import useBreakpoints from "@thebiltheory/usebreakpoints";
 import {breakpoints} from "../../utils/breakpoints";
+import {AdvancedImage} from "@cloudinary/react";
+import {cardSwiperImg1, cardSwiperImg2} from "../../../src/cloudinary/images";
 
 const Challenge = () => {
     const [value, currentBreakpoint] = useBreakpoints(
@@ -53,8 +55,8 @@ const Challenge = () => {
             </div>
 
             <div className={`${CSS.cardSwiperImgContainer}`}>
-                <img className={`${CSS.cardSwiperImg}`} src="/assets/projects/chateau-de-sours/card-swiper-1.png" alt="" />
-                <img className={`${CSS.cardSwiperImg}`} src="/assets/projects/chateau-de-sours/card-swiper-2.png" alt="" />
+                <AdvancedImage className={`${CSS.cardSwiperImg}`} alt="challenge-1"  cldImg={cardSwiperImg1}/>
+                <AdvancedImage className={`${CSS.cardSwiperImg}`} alt="challenge-2" cldImg={cardSwiperImg2} />
             </div>
         </section>
     );

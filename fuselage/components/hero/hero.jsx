@@ -35,7 +35,7 @@ const Hero = () => {
             </div>
 
             <div className={`${CSS.heroBackground} -a-heroBackground`}>
-                <img src="/assets/projects/chateau-de-sours/cds-hero.jpg" alt="" />
+                <Image layout='fill' src="/assets/projects/chateau-de-sours/cds-hero.jpg" alt="" />
             </div>
         </section>
     );

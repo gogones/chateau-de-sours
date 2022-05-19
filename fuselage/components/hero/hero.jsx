@@ -1,8 +1,7 @@
 import React from 'react';
 import CSS from "../../../pages/index.module.css";
 import {gsap} from "gsap/dist/gsap";
-import useBreakpoints from "@thebiltheory/usebreakpoints";
-import {breakpoints} from "../../utils/breakpoints";
+import Image from "next/image";
 
 const Hero = () => {
     React.useEffect(() => {
@@ -29,7 +28,7 @@ const Hero = () => {
                     <p className="fs-xl fw-500 lh-1 maxw-60">Expressing balance and harmony</p>
                     <div className={`${CSS.heroWidget} -a-heroWidget`}>
                         <p className='pt-sm'>
-                            <img src="/assets/projects/chateau-de-sours/cds-logo@2x.png" alt="" style={{ width: `100%`}} />
+                            <Image layout='fill' src="/assets/projects/chateau-de-sours/cds-logo@2x.png" alt="" />
                         </p>
                     </div>
                 </div>

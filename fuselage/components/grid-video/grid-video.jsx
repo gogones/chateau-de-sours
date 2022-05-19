@@ -1,22 +1,37 @@
 import React from 'react';
 import CSS from "../../../pages/index.module.css";
+import {AdvancedVideo} from "@cloudinary/react";
+import {gridVideo} from "../../../src/cloudinary/videos";
+import {gsap} from "gsap/dist/gsap";
 
 const GridVideo = () => {
+    const videoRef = React.useRef();
+
+    React.useEffect(() => {
+        const scrollTrigger = {
+            trigger: '#videoContainer2',
+            scrub: 1,
+            onEnter: () => videoRef.current.play()
+        };
+        gsap.to('#videoContainer2', {
+            scrollTrigger,
+        })
+    }, []);
+
     return (
         <section id='videoContainer2' className="block bg-default">
             <div className="container">
-                <video
+                <AdvancedVideo
                     id='video2'
+                    innerRef={videoRef}
                     className={CSS.video}
-                    playsInline={true}
-                    autoPlay={true}
-                    loop={true}
-                    preload="auto"
-                    muted={true}
+                    playsInline
+                    loop
+                    muted
+                    preload="none"
                     style={{ width: `100%`}}
-                >
-                    <source src="/assets/projects/chateau-de-sours/0_essentials_list.mp4" type="video/mp4" />
-                </video>
+                    cldVid={gridVideo}
+                />
             </div>
         </section>
     );

@@ -1,20 +1,21 @@
 import React from 'react';
 import CSS from "../../../pages/index.module.css";
+import {AdvancedVideo} from "@cloudinary/react";
+import {stickyVideo} from "../../../src/cloudinary/videos";
 
 const StickyVideoMobile = () => {
 
     return (
         <section className={`${CSS.stickyVideoContainer} -a-stickyVideoContainer`}>
-            <video
+            <AdvancedVideo
+                cldVid={stickyVideo}
                 className={`${CSS.stickyVideo} -a-stickyVideo`}
-                playsInline={true}
-                loop={true}
-                preload="auto"
-                muted={true}
+                playsInline
+                loop
+                muted
+                autoPlay
                 poster="/assets/projects/chateau-de-sours/5_homepage_desktop.jpg"
-            >
-                <source src="/assets/projects/chateau-de-sours/5_homepage_desktop.mp4" type="video/mp4" />
-            </video>
+            />
         </section>
     );
 };

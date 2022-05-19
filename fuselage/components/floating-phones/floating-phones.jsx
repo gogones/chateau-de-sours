@@ -1,8 +1,15 @@
 import React from 'react';
 import CSS from "../../../pages/index.module.css";
 import {gsap} from "gsap/dist/gsap";
+import {AdvancedVideo} from "@cloudinary/react";
+import {
+    homepageMobileVideo,
+    ourValueMobileVideo,
+    philosophyMobileVideo
+} from "../../../src/cloudinary/videos";
 
 const FloatingPhones = () => {
+    const videoRef = React.useRef();
     React.useEffect(() => {
         gsap.to('.floatingPhone2', {
             scrollTrigger: {
@@ -10,6 +17,9 @@ const FloatingPhones = () => {
                 scrub: 1,
                 start: 'top bottom',
                 end: 'bottom top',
+                onEnter: () => {
+                    videoRef.current.play();
+                },
             },
             yPercent: 60
         })
@@ -25,51 +35,40 @@ const FloatingPhones = () => {
         })
     }, []);
 
+    const videoProps = {
+        className: CSS.phoneGridVideo,
+        playsInline: true,
+        loop: true,
+        muted: true,
+        preload: "none",
+        style: { width: `100%`},
+        innerRef: videoRef,
+    }
+
     return (
         <section className={`floatingPhones | block bg-default minvh-100 ${CSS.removePt}`}>
             <div className="container columns-2 gap-md">
                 <div className={CSS.phoneGrid}>
                     <div className='floatingPhone1'>
-                        <video
+                        <AdvancedVideo
+                            cldVid={homepageMobileVideo}
                             id='phone1'
-                            className={CSS.phoneGridVideo}
-                            playsInline={true}
-                            autoPlay={true}
-                            loop={true}
-                            preload="auto"
-                            muted={true}
-                            style={{ width: `100%`}}
-                        >
-                            <source src="/assets/projects/chateau-de-sours/2_homepage_mobile-19apr-r2_1.mp4" type="video/mp4" />
-                        </video>
+                            {...videoProps}
+                        />
                     </div>
                     <div className='floatingPhone2'>
-                        <video
+                        <AdvancedVideo
+                            cldVid={ourValueMobileVideo}
                             id='phone2'
-                            className={CSS.phoneGridVideo}
-                            playsInline={true}
-                            autoPlay={true}
-                            loop={true}
-                            preload="auto"
-                            muted={true}
-                            style={{ width: `100%`}}
-                        >
-                            <source src="/assets/projects/chateau-de-sours/3_our_value_mobile-19apr-r2.mp4" type="video/mp4" />
-                        </video>
+                            {...videoProps}
+                        />
                     </div>
                     <div className='floatingPhone3'>
-                        <video
+                        <AdvancedVideo
+                            cldVid={philosophyMobileVideo}
                             id='phone3'
-                            className={CSS.phoneGridVideo}
-                            playsInline={true}
-                            autoPlay={true}
-                            loop={true}
-                            preload="auto"
-                            muted={true}
-                            style={{ width: `100%`}}
-                        >
-                            <source src="/assets/projects/chateau-de-sours/4_philosophy_mobile-19apr-r2_1.mp4" type="video/mp4" />
-                        </video>
+                            {...videoProps}
+                        />
                     </div>
 
                 </div>

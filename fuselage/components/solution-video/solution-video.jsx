@@ -2,6 +2,9 @@ import React from 'react';
 import useBreakpoints from "@thebiltheory/usebreakpoints";
 import {breakpoints} from "../../utils/breakpoints";
 import CSS from "../../../pages/index.module.css";
+import {AdvancedVideo} from "@cloudinary/react";
+import {solutionVideo} from "../../../src/cloudinary/videos";
+import {gsap} from "gsap/dist/gsap";
 
 const SolutionVideo = () => {
     const [value, currentBreakpoint] = useBreakpoints(
@@ -9,18 +12,29 @@ const SolutionVideo = () => {
         Object.values(breakpoints)
     );
 
+    const videoRef = React.useRef();
+
+    React.useEffect(() => {
+        const scrollTrigger = {
+            trigger: '#solutionVideoContainer',
+            scrub: 1,
+            onEnter: () => videoRef.current.play()
+        };
+        gsap.to('#solutionVideoContainer', {
+            scrollTrigger,
+        })
+    }, []);
+
     return (
-        <section className={currentBreakpoint <= 600 ? `block ${CSS.removePh}` : `block`}>
-            <video
-                playsInline={true}
-                autoPlay={true}
-                loop={true}
-                preload="auto"
-                muted={true}
+        <section id='solutionVideoContainer' className={currentBreakpoint <= 600 ? `block ${CSS.removePh}` : `block`}>
+            <AdvancedVideo
+                innerRef={videoRef}
+                playsInline
+                loop
+                muted
+                preload="none"
                 style={{ width: `100%`}}
-            >
-                <source src="/assets/projects/chateau-de-sours/Chateau_20201218_Website_1.2.mp4" type="video/mp4" />
-            </video>
+                cldVid={solutionVideo} />
         </section>
     );
 };

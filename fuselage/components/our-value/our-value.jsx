@@ -1,22 +1,35 @@
 import React from 'react';
 import CSS from "../../../pages/index.module.css";
+import {AdvancedVideo} from "@cloudinary/react";
+import {ourValueVideo} from "../../../src/cloudinary/videos";
+import {gsap} from "gsap/dist/gsap";
 
 const OurValue = () => {
+    const videoRef = React.useRef();
+    React.useEffect(() => {
+            const scrollTrigger = {
+                trigger: '#videoContainer1',
+                scrub: 1,
+                onEnter: () => videoRef.current.play()
+            };
+            gsap.to('#videoContainer1', {
+                scrollTrigger,
+            })
+    }, []);
+
     return (
         <section id='videoContainer1' className="block bg-wash" style={{paddingBottom: '4rem'}}>
             <div className="container">
-                <video
+                <AdvancedVideo
                     id='video1'
+                    innerRef={videoRef}
                     className={CSS.video}
-                    playsInline={true}
-                    autoPlay={true}
-                    loop={true}
-                    preload="auto"
-                    muted={true}
+                    playsInline
+                    loop
+                    muted
                     style={{ width: `100%`}}
-                >
-                    <source src="/assets/projects/chateau-de-sours/6_our_value_desktop.mp4" type="video/mp4" />
-                </video>
+                    preload="none"
+                    cldVid={ourValueVideo} />
             </div>
 
             <div className={`${CSS.mobileRemovePaddingBottom} container desktopPaddingLeft py-md | fadeUp`}>

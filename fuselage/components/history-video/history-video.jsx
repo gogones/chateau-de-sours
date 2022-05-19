@@ -1,6 +1,9 @@
 import React from 'react';
 import useBreakpoints from "@thebiltheory/usebreakpoints";
 import {breakpoints} from "../../utils/breakpoints";
+import {AdvancedVideo} from "@cloudinary/react";
+import {historyVideo} from "../../../src/cloudinary/videos";
+import {gsap} from "gsap/dist/gsap";
 
 const HistoryVideo = () => {
     const [value, currentBreakpoint] = useBreakpoints(
@@ -8,18 +11,29 @@ const HistoryVideo = () => {
         Object.values(breakpoints)
     );
 
+    const videoRef = React.useRef();
+    React.useEffect(() => {
+        const scrollTrigger = {
+            trigger: '#historyVideoContainer',
+            scrub: 1,
+            onEnter: () => videoRef.current.play()
+        };
+        gsap.to('#historyVideoContainer', {
+            scrollTrigger,
+        })
+    }, []);
+
     return (
-        <section className={currentBreakpoint <= 600 ? '' : 'block'} style={{paddingTop: 0}}>
-            <video
-                playsInline={true}
-                autoPlay={true}
-                loop={true}
-                preload="auto"
-                muted={true}
+        <section id="historyVideoContainer" className={currentBreakpoint <= 600 ? '' : 'block'} style={{paddingTop: 0}}>
+            <AdvancedVideo
+                innerRef={videoRef}
+                playsInline
+                loop
+                muted
+                preload="none"
                 style={{ width: `100%`}}
-            >
-                <source src="/assets/projects/chateau-de-sours/Chateau_20210114_Website_4.mp4" type="video/mp4" />
-            </video>
+                cldVid={historyVideo}
+            />
         </section>
     );
 };

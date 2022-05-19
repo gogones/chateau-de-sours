@@ -3,6 +3,8 @@ import CSS from "../../../pages/index.module.css";
 import {gsap} from "gsap/dist/gsap";
 import useBreakpoints from "@thebiltheory/usebreakpoints";
 import {breakpoints} from "../../utils/breakpoints";
+import {AdvancedVideo} from '@cloudinary/react';
+import {stickyVideo} from "../../../src/cloudinary/videos";
 
 const StickyVideo = () => {
     const [value, currentBreakpoint] = useBreakpoints(
@@ -10,8 +12,7 @@ const StickyVideo = () => {
         Object.values(breakpoints)
     );
 
-    const isMobile = currentBreakpoint <= breakpoints.sm
-
+    const videoRef = React.useRef();
     React.useEffect(() => {
 
         if(value && currentBreakpoint > breakpoints.sm) {
@@ -30,21 +31,18 @@ const StickyVideo = () => {
         }
     }, [currentBreakpoint, value]);
 
-    const videoRef = React.useRef();
-
     return (
         <section className={`${CSS.stickyVideoContainer} -a-stickyVideoContainer`}>
-            <video
-                ref={videoRef}
+            <AdvancedVideo
+                cldVid={stickyVideo}
+                innerRef={videoRef}
                 className={`${CSS.stickyVideo} -a-stickyVideo`}
-                playsInline={true}
-                loop={true}
-                preload="auto"
-                muted={true}
+                playsInline
+                loop
+                preload="none"
+                muted
                 poster="/assets/projects/chateau-de-sours/5_homepage_desktop.jpg"
-            >
-                <source src="/assets/projects/chateau-de-sours/5_homepage_desktop.mp4" type="video/mp4" />
-            </video>
+             />
         </section>
     );
 };

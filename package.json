@@ -11,6 +11,8 @@
   "dependencies": {
     "@cloudinary/react": "^1.4.0",
     "@cloudinary/url-gen": "^1.8.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@thebiltheory/usebreakpoints": "^1.1.2",
     "gsap": "^3.9.1",
     "next": "12.1.0",
@@ -21,7 +23,16 @@
     "react-use-draggable-scroll": "^0.4.2"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.9.2",
+    "autoprefixer": "^10.4.7",
     "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0"
+    "eslint-config-next": "12.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-tailwindcss": "^3.5.2",
+    "postcss": "^8.4.14",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.11",
+    "tailwindcss": "^3.1.2",
+    "xwind": "^0.8.0"
   }
 }
